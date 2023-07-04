@@ -11,6 +11,11 @@ public class Main {
         controlBonificacion.registrarSalario(funcionario);
         controlBonificacion.registrarSalario(gerente);
         controlBonificacion.registrarSalario(contador);
+        gerente.setClave("947");
+
+        SistemaInterno sistemaInterno = new SistemaInterno();
+
+        sistemaInterno.autenticar(gerente, "947");
 
         funcionario.setNombre("Pedro");
         funcionario.setDocumento("1234");
