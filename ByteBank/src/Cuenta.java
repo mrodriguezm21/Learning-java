@@ -7,8 +7,8 @@ public abstract class Cuenta {
     public Cuenta() {
     }
 
-    public Cuenta (int agencia, int numero){
-        this.agencia= agencia;
+    public Cuenta(int agencia, int numero) {
+        this.agencia = agencia;
         this.numero = numero;
     }
 
@@ -16,20 +16,21 @@ public abstract class Cuenta {
         return saldo;
     }
 
-    public abstract void depositar(double monto) ;
-    public boolean retirar(double monto){
-        if (monto <= this.saldo){
-        this.saldo -= monto;
-        return true;
-        } else {
-            return false;
-        }
+    public abstract void depositar(double monto);
 
-    }  public boolean trasnferir(double monto, Cuenta destino){
-        if (monto <= this.saldo){
+    public void retirar(double monto) {
+        if (monto > this.saldo) {
+            throw new SaldoInsuficienteException("Saldo Insuficiente");
+        }
         this.saldo -= monto;
-        destino.depositar(monto);
-        return true;
+        System.out.println("Saldo restante " + this.saldo);
+    }
+
+    public boolean trasnferir(double monto, Cuenta destino) {
+        if (monto <= this.saldo) {
+            this.saldo -= monto;
+            destino.depositar(monto);
+            return true;
         } else {
             return false;
         }

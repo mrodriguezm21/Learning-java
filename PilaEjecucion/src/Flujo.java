@@ -26,7 +26,7 @@ public class Flujo {
                 int resultado = i / num;
                 System.out.println(resultado);
 
-            } catch (NullPointerException | ArithmeticException e) {
+            } catch (Exception e) {
                 System.out.println(e);
             }
         }

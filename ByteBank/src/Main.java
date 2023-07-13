@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Funcionario funcionario = new Contador();
+/*        Funcionario funcionario = new Contador();
         funcionario.setSalario(2000);
         Gerente gerente = new Gerente();
         gerente.setSalario(4000);
@@ -18,6 +18,13 @@ public class Main {
         sistemaInterno.autenticar(gerente, "947");
 
         funcionario.setNombre("Pedro");
-        funcionario.setDocumento("1234");
+        funcionario.setDocumento("1234");*/
+
+
+        CuentaAhorros cuentaAhorros = new CuentaAhorros(33,2565);
+        cuentaAhorros.retirar(200);
+        cuentaAhorros.depositar(2100);
+        cuentaAhorros.retirar(200);
+        cuentaAhorros.getSaldo();
     }
 }
